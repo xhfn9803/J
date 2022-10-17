@@ -35,25 +35,20 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             if (menuSet.activeSelf)
+            {
+                Cursor.visible = false;
                 menuSet.SetActive(false);
+                
+            }
+
             else
+            {
                 menuSet.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-            Cursor.lockState = CursorLockMode.None;
-        if (Input.GetKeyDown(KeyCode.A))
-            Cursor.visible = false;
-
-        if (Input.GetKeyDown(KeyCode.H))
-            Cursor.visible = true;
-
-        
-
-        
-             
-            
-        
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+                
+        }      
             
     }
     public void GameExit()
