@@ -25,7 +25,7 @@ public class MController : MonoBehaviour
     public void StartDialog()
     {
         DText.text = "";
-        string sampleText = "세기-시대-년도-월- 일- 시간 순";
+        string sampleText = "본부가 공격 받고 있다! 다시 한번 알린다 본부가 공격 받고 있다 지금 즉시 임무 중단하고 안전한 곳으로 대피해라!";
         StartCoroutine(Typing(sampleText));
     }
 
