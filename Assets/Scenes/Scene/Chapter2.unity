@@ -4057,7 +4057,7 @@ MonoBehaviour:
   Range: 30
   AttackArea: {fileID: 1169543075}
   MaxHp: 5
-  CurrentHp: 0
+  CurrentHp: 5
   NavRadious: 10
   NavRange: 20
   Damage: 1
@@ -5879,7 +5879,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656002753}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5892,8 +5892,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656002753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.814, z: 0.639}
+  m_LocalScale: {x: 1.9903, y: 1.9903, z: 1.9903}
   m_Children: []
   m_Father: {fileID: 1308494674}
   m_RootOrder: 2
@@ -8020,10 +8020,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e270a4530060e5840a344b60c0125d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 3
-  CurrentHp: 0
+  MaxHp: 10
+  CurrentHp: 10
   Force: 5
-  rb: {fileID: 0}
+  rb: {fileID: 860404461}
+--- !u!54 &860404461 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 54436517532814138, guid: b9ca752c3df4dec4cadafd04fc5d444b, type: 3}
+  m_PrefabInstance: {fileID: 860404455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881570071
 GameObject:
   m_ObjectHideFlags: 0
@@ -9398,7 +9403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e2c317e3d35121747bd82b7e4c0de2e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.22
+      value: -5.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e2c317e3d35121747bd82b7e4c0de2e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10806,7 +10811,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169543074}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10819,8 +10824,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169543074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0.649, z: 0.992}
+  m_LocalScale: {x: 2.0497532, y: 2.0497532, z: 2.0497532}
   m_Children: []
   m_Father: {fileID: 463100376}
   m_RootOrder: 2
@@ -11844,7 +11849,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289530747}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -11857,8 +11862,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289530747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.532, z: 2.65}
+  m_LocalScale: {x: 3.7921, y: 3.7921, z: 3.7921}
   m_Children: []
   m_Father: {fileID: 1852454546}
   m_RootOrder: 3
@@ -12277,7 +12282,7 @@ MonoBehaviour:
   Range: 30
   AttackArea: {fileID: 656002754}
   MaxHp: 5
-  CurrentHp: 0
+  CurrentHp: 5
   NavRadious: 10
   NavRange: 20
   Damage: 1
@@ -16436,11 +16441,11 @@ MonoBehaviour:
   Player: {fileID: 1387582710}
   Range: 30
   AttackArea: {fileID: 1289530748}
-  MaxHp: 8
-  CurrentHp: 0
+  MaxHp: 20
+  CurrentHp: 20
   NavRadious: 10
   NavRange: 20
-  Damage: 1
+  Damage: 5
 --- !u!95 &1852454542
 Animator:
   serializedVersion: 3
