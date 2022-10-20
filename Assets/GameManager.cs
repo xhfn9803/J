@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text talkText;
-    public GameObject scanObject;
+    
     //public TalkManager talkManager;
 
     /*public void Action(GameObject scanObj)
@@ -38,6 +37,7 @@ public class GameManager : MonoBehaviour
             {
                 Cursor.visible = false;
                 menuSet.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked; //마우스 커서 고정
                 
             }
 
@@ -47,8 +47,11 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
+
+            
                 
-        }      
+        }
+        
             
     }
     public void GameExit()
