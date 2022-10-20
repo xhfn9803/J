@@ -18,12 +18,18 @@ public class GameManager : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene("Title");
+        
     }
     public GameObject menuSet;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (SceneManager.GetActiveScene().name == "Ending")
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
     }
 
    
