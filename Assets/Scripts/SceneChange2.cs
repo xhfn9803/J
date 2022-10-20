@@ -21,6 +21,7 @@ public class SceneChange2 : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            Scene2.A = 1;
             SceneManager.LoadScene("game");
         }
     }
