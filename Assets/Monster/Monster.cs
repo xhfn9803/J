@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -13,9 +14,10 @@ public class Monster : MonoBehaviour
 
     [SerializeField] Transform[] Target;
     [SerializeField] Transform Player;
-    [SerializeField] float Range = 30f;
+    float Range = 30f;
     Collider[] Colliders;
     [SerializeField] BoxCollider AttackArea;
+    public Slider Hpbar;
 
     [SerializeField] int MaxHp = 5;
     [SerializeField] int CurrentHp = 0;
@@ -23,6 +25,10 @@ public class Monster : MonoBehaviour
     [SerializeField] float NavRange = 20f;
     public int Damage = 1;
     bool isAttack = true;
+
+    bool IsBorder;
+
+    
 
     void Awake()
     {
@@ -49,6 +55,7 @@ public class Monster : MonoBehaviour
     void Update()
     {
 
+
         RaycastHit[] RayHits =
             Physics.SphereCastAll(transform.position,
             NavRadious,
@@ -67,7 +74,13 @@ public class Monster : MonoBehaviour
 
         Targeting();
 
+
+        Hpbar.maxValue = MaxHp;
+        Hpbar.value = CurrentHp;
+
     }
+
+   
 
     /*void Sight()
     {
