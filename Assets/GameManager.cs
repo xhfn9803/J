@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         {
             if (menuSet.activeSelf)
             {
+                
                 Cursor.visible = false;
                 menuSet.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked; //마우스 커서 고정
@@ -64,9 +65,17 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
+    public void Continue()
+    {
+
+        Cursor.visible = false;
+        menuSet.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked; //마우스 커서 고정
+
+    }
+
     //void Talk()
-   // {
-        //talkManager.GetTalk(Id, talkIndex);
+    // {
+    //talkManager.GetTalk(Id, talkIndex);
     //}
 }

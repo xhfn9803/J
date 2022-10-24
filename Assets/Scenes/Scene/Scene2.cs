@@ -46,7 +46,7 @@ public class Scene2 : MonoBehaviour
     void AnswerCheck()
     {
         LastInsert = InsertNum[4];
-        
+
     }
 
     void OnTriggerEnter(Collider col)
@@ -70,7 +70,7 @@ public class Scene2 : MonoBehaviour
             else if (!Answer)
             {
                 WrongText.SetActive(true);
-                
+
 
                 InsertNum[0] = -1;
                 InsertNum[1] = -1;
@@ -84,6 +84,7 @@ public class Scene2 : MonoBehaviour
             }
         }
     }
+    
 
 
 }
