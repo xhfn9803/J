@@ -28,21 +28,20 @@ public class MoveTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        CameraRotation();
+        //Move();
+        //CameraRotation();
     }
 
-    void Move()
+    public void Move(Vector2 InputDir)
     {
-        float MoveX = Input.GetAxisRaw("Horizontal");
-        float MoveZ = Input.GetAxisRaw("Vertical");
+        Vector2 MoveInput = InputDir;
 
-        Vector3 Horizontal = transform.right * MoveX;
-        Vector3 Vertical = transform.forward * MoveZ;
+        Vector3 LookForward = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+        Vector3 LookRight = new Vector3(transform.right.x, 0, transform.right.z).normalized;
 
-        Vector3 Velocity = (Horizontal + Vertical).normalized * MoveSpeed;
+        Vector3 MoveDir = LookForward*MoveInput.y + LookRight*MoveInput.x;
 
-        Rig.MovePosition(transform.position + Velocity * Time.deltaTime);
+        Rig.MovePosition(transform.position + MoveDir * MoveSpeed);
 
     }
 

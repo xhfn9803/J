@@ -12,8 +12,11 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField, Range(10, 150)]
     float LeverRange;
 
-    Vector2 InputDir;
+    Vector3 InputDir;
     bool IsInput;
+
+    [SerializeField]
+    MoveTest Controller;
 
     void Awake()
     {
@@ -35,6 +38,7 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         Lever.anchoredPosition = Vector2.zero;
         IsInput = false;
+        Controller.Move(Vector3.zero);
     }
 
     void ControlJoystickLever(PointerEventData eventData)
@@ -47,7 +51,8 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     void InputControlVector()
     {
-        Debug.Log(InputDir.x + "/" + InputDir.y);
+        Controller.Move(InputDir);
+        Debug.Log(InputDir.x + "/" + InputDir.z);
     }
 
     // Start is called before the first frame update

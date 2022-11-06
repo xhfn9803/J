@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<PlayerAnimatorController>();
         audioSource = GetComponent<AudioSource>();
         weapon = GetComponentInChildren<WeaponAssaultRifle>();
+
     }
 
     private void Update()
