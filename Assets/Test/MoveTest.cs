@@ -28,8 +28,7 @@ public class MoveTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Move();
-        //CameraRotation();
+
     }
 
     public void Move(Vector2 InputDir)
@@ -45,15 +44,23 @@ public class MoveTest : MonoBehaviour
 
     }
 
-    void CameraRotation()
+    public void CameraRotation(Vector3 InputDir)
     {
-        float XRot = Input.GetAxisRaw("Mouse Y");
-        float CameraRotX = XRot * LookSensitivity;
-        CurrentCameraRotX -= CameraRotX;
-        CurrentCameraRotX = Mathf.Clamp(CurrentCameraRotX, -CameraRot, CameraRot);
+        
+        Vector2 MouseDelta = InputDir;
+        Vector3 CamAngle = Cam.transform.rotation.eulerAngles;
+        float X = CamAngle.x - MouseDelta.y;
 
-        Cam.transform.localEulerAngles = new Vector3(CurrentCameraRotX+90, 0f, 0f);
+        if (X < 180f)
+        {
+            X = Mathf.Clamp(X, -1f, 70f);
+        }
+        else
+        {
+            X = Mathf.Clamp(X, 335f, 361f);
+        }
 
+        Cam.transform.rotation = Quaternion.Euler(X, CamAngle.y + MouseDelta.x, CamAngle.z);
     }
 
 }

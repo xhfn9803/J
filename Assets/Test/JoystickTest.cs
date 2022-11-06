@@ -18,6 +18,9 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField]
     MoveTest Controller;
 
+    public enum JoystickType { Move, Rotate}
+    public JoystickType Type;
+
     void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
@@ -38,7 +41,17 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         Lever.anchoredPosition = Vector2.zero;
         IsInput = false;
-        Controller.Move(Vector3.zero);
+        switch (Type)
+        {
+            case JoystickType.Move:
+                Controller.Move(InputDir);
+                break;
+
+            case JoystickType.Rotate:
+                Controller.CameraRotation(InputDir);
+                break;
+
+        }
     }
 
     void ControlJoystickLever(PointerEventData eventData)
@@ -51,8 +64,19 @@ public class JoystickTest : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     void InputControlVector()
     {
-        Controller.Move(InputDir);
-        Debug.Log(InputDir.x + "/" + InputDir.z);
+        switch (Type)
+        {
+            case JoystickType.Move:
+                Controller.Move(InputDir);
+                break;
+
+            case JoystickType.Rotate:
+                Controller.CameraRotation(InputDir);
+                break;
+
+        }
+
+        
     }
 
     // Start is called before the first frame update
