@@ -48,7 +48,7 @@ public class MoveTest : MonoBehaviour
     {
         
         Vector2 MouseDelta = InputDir;
-        Vector3 CamAngle = Cam.transform.rotation.eulerAngles;
+        Vector3 CamAngle = transform.rotation.eulerAngles;
         float X = CamAngle.x - MouseDelta.y;
 
         if (X < 180f)
@@ -60,7 +60,7 @@ public class MoveTest : MonoBehaviour
             X = Mathf.Clamp(X, 335f, 361f);
         }
 
-        Cam.transform.rotation = Quaternion.Euler(X, CamAngle.y + MouseDelta.x, CamAngle.z);
+        transform.rotation = Quaternion.Euler(X, CamAngle.y + MouseDelta.x, CamAngle.z);
     }
 
 }
