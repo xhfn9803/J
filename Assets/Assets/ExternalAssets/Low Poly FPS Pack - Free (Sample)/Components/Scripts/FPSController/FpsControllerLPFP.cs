@@ -143,10 +143,9 @@ namespace FPSControllerLPFP
         private void FixedUpdate()
         {
             // FixedUpdate is used instead of Update because this code is dealing with physics and smoothing.
-            RotateCameraAndCharacter();
-            MoveCharacter();
+            //RotateCameraAndCharacter();
+           // MoveCharacter();
             _isGrounded = false;
-
             
         }
 			
@@ -155,10 +154,7 @@ namespace FPSControllerLPFP
         {
 			arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
-            PlayFootstepSounds();
-            
-            
-
+            PlayFootstepSounds();                
         }
 
         private void RotateCameraAndCharacter()
@@ -267,7 +263,7 @@ namespace FPSControllerLPFP
 
         private void PlayFootstepSounds()
         {
-            if (_isGrounded && _rigidbody.velocity.sqrMagnitude > 0.1f)
+            if (_isGrounded /*&& _rigidbody.velocity.sqrMagnitude > 0.1f*/)
             {
                 _audioSource.clip = input.Run ? runningSound : walkingSound;
                 if (!_audioSource.isPlaying)
